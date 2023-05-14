@@ -1,0 +1,37 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model chats {
+  chat_id      Int        @id @default(autoincrement())
+  created_at   Int?
+  is_active    Boolean
+  session_id   String?    @db.VarChar(1000)
+  chat_history String?    @db.VarChar(100)
+  messages     messages[]
+}
+
+model documents {
+  document_id          Int     @id @default(autoincrement())
+  document_title       String? @db.VarChar(100)
+  document_path        String? @db.VarChar(1000)
+  document_last_update Int
+  document_last_size   Float?  @db.Float
+  last_sync_at         Int?
+}
+
+model messages {
+  message_id Int     @id @default(autoincrement())
+  role       String? @db.VarChar(100)
+  created_at Int?
+  chat_id    Int?
+  rang       Int?
+  chats      chats?  @relation(fields: [chat_id], references: [chat_id], onDelete: NoAction, onUpdate: NoAction, map: "messages_FK")
+
+  @@index([chat_id], map: "messages_FK")
+}

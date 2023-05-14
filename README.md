@@ -1,2 +1,2 @@
 # Question-Answering assistant langchain GPT API
-Une API d'un assistant Question-Answering basé sur le framework LangChain
+An API of a Question-Answering Assistant based on the LangChain framework

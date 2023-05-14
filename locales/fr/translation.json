@@ -1,0 +1,24 @@
+{
+  "errors": {
+    "httpRequest": {
+      "BAD_REQUEST": "Requête incorrecte ou mal formée.",
+      "UNAUTHORIZED": "Utilisateur non authentifié ou droits insuffisants pour accéder à la ressource.",
+      "FORBIDDEN": "Accès interdit. L'utilisateur n'est pas autorisé à accéder à la ressource demandée.",
+      "NOT_FOUND": "Ressource introuvable.",
+      "INTERNAL_SERVER_ERROR": "Erreur interne du serveur.",
+      "BAD_GATEWAY": "Mauvaise passerelle. Réponse invalide reçue du serveur distant.",
+      "SERVICE_UNAVAILABLE": "Service indisponible. Le serveur est temporairement surchargé ou en maintenance."
+    },
+    "invalidTypeData": {
+      "JSON": "Donnée JSON invalide"
+    }
+  },
+
+  "success": {
+    "OK": "La requête a été traitée avec succès.",
+    "CREATED": "La requête a été traitée avec succès, et une nouvelle ressource a été créée.",
+    "NO_CONTENT": "La requête a été traitée avec succès, mais il n'y a pas de contenu à renvoyer.",
+    "PARTIAL_CONTENT": "La requête a été traitée avec succès, mais seule une partie de la réponse est renvoyée en raison d'une demande de contenu partiel.",
+    "NOT_MODIFIED": "La ressource n'a pas été modifiée depuis la dernière requête, et la réponse n'est pas renvoyée pour économiser la bande passante."
+  }
+}

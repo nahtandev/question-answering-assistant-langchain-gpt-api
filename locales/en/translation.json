@@ -1,0 +1,24 @@
+{
+  "errors": {
+    "httpRequest": {
+      "BAD_REQUEST": "Bad request. The request is incorrect or malformed.",
+      "UNAUTHORIZED": "Unauthorized. User is not authenticated or does not have sufficient rights to access the resource.",
+      "FORBIDDEN": "Forbidden. Authenticated user is not allowed to access the requested resource.",
+      "NOT_FOUND": "Not found. The requested resource could not be found.",
+      "INTERNAL_SERVER_ERROR": "Internal server error. An internal server error has occurred.",
+      "BAD_GATEWAY": "Bad gateway. Received an invalid response from the upstream server.",
+      "SERVICE_UNAVAILABLE": "Service unavailable. The server is temporarily overloaded or undergoing maintenance."
+    },
+    "invalidTypeData": {
+      "JSON": "Invalid JSON Data"
+    }
+  },
+
+  "success": {
+    "OK": "The request has been processed successfully.",
+    "CREATED": "The request has been processed successfully, and a new resource has been created.",
+    "NO_CONTENT": "The request has been processed successfully, but there is no content to return.",
+    "PARTIAL_CONTENT": "The request has been processed successfully, but only a partial response is returned due to a partial content request.",
+    "NOT_MODIFIED": "The resource has not been modified since the last request, and the response is not returned to save bandwidth."
+  }
+}
