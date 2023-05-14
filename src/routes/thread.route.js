@@ -11,15 +11,6 @@ const express = require('express');
 const thread = express.Router();
 
 //Route to create new Chat session
-thread.post('/', (req, res, next) => {
-  try {
-    const data = req.body;
-    res.send(data);
-  } catch (error) {
-    error.message = 'Erreur';
-    console.log(error);
-    next(error);
-  }
-});
+thread.post('/', (req, res, next) => {});
 
 module.exports = thread;
