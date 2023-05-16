@@ -1,5 +1,5 @@
 /**
- * File name: thread.controller.js
+ * File name: document.helper.js
  * Description: This file contains all document helpers.
  * Author(s): nathandev
  * Creation date: 14/05/2023

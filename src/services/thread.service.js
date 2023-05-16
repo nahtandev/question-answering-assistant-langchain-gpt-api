@@ -7,6 +7,10 @@
  */
 
 const { initDocs } = require('../services/document.service');
+const Thread = require('../models/thread.model');
+const { timeStamp } = require('../utils/date_time');
+const { generateSessionID } = require('../helpers/thread.helper');
+
 
 // Initiliaze documents after server is started and get vectore store
 // eslint-disable-next-line no-unused-vars
@@ -16,7 +20,16 @@ let vectoreStore;
 })();
 
 const createNewThread = async () => {
-  
+  try {
+    const newThread = await Thread.createNewThread({
+      createdAt: timeStamp(),
+      isActive: true,
+      sessionID: generateSessionID(),
+    });
+    return newThread;
+  } catch (error) {
+    throw new Error(error);
+  }
 };
 
 module.exports = {

@@ -30,6 +30,7 @@ const errorHandler = (err, req, res, next) => {
   // If body data send is'nt valid JSON
   if (err instanceof SyntaxError && err.status === 400 && 'body' in err) {
     response = {
+      success: false,
       status: err.status,
       error: {
         code: 'BAD_REQUEST',
@@ -44,6 +45,7 @@ const errorHandler = (err, req, res, next) => {
     };
   } else {
     response = {
+      success: false,
       status: err.status || errorConfig.defaultStatus,
       error: {
         code: errorCode,
