@@ -36,10 +36,20 @@ const databaseConfig = {
   prismaUrl: process.env.DATABASE_URL,
 };
 
+const myscaleConfig = {
+  host: process.env.MYSCALE_HOST,
+  username: process.env.MYSCALE_USERNAME,
+  password: process.env.MYSCALE_PASSWORD,
+  port: process.env.MYSCALE_PORT,
+  database: process.env.MYSCALE_DATABASE,
+  table: process.env.MYSCALE_TABLE,
+};
+
 module.exports = {
   appConfig,
   corsConfig,
   errorConfig,
   pinoConfig,
-  databaseConfig
+  databaseConfig,
+  myscaleConfig,
 };

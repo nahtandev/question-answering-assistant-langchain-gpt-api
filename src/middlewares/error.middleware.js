@@ -6,29 +6,8 @@
  * Last modified date: 12/05/2023
  */
 
-const pino = require('pino');
 const { errorConfig } = require('../configs');
-
-// Configure Pino Logger
-const logger = pino({
-  level: 'error',
-  timestamp: true,
-  redact: ['req.headers.authorization'],
-  prettifier: true,
-
-  //   Save error into following file: logs/error.log
-  //   End process
-  transport: {
-    targets: [
-      { level: 'error', target: 'pino-pretty' },
-      {
-        level: 'error',
-        target: 'pino/file',
-        options: { destination: 'logs/error.log', sync: false },
-      },
-    ],
-  },
-});
+const { logger } = require('../utils/logger');
 
 // eslint-disable-next-line no-unused-vars
 const errorHandler = (err, req, res, next) => {

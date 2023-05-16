@@ -50,6 +50,7 @@ app.use(cors(corsConfig));
 // Enable parsing of cookies in HTTP requests
 app.use(cookieParser());
 
+
 /** Routes **/
 
 // Thread Route
@@ -57,5 +58,6 @@ app.use('/thread', thread);
 
 // Error Middleware
 app.use(errorHandler);
+
 
 module.exports = app;

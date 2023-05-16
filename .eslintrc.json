@@ -4,7 +4,7 @@
   },
   "plugins": ["security"],
   "parserOptions": {
-    "ecmaVersion": 6
+    "ecmaVersion": "latest"
   },
   "extends": ["eslint:recommended", "plugin:security/recommended"]
 }

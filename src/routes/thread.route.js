@@ -7,10 +7,11 @@
  */
 
 const express = require('express');
+const { newThread } = require('../controllers/thread.controller');
 
 const thread = express.Router();
 
 //Route to create new Chat session
-thread.post('/', (req, res, next) => {});
+thread.post('/', newThread);
 
 module.exports = thread;
