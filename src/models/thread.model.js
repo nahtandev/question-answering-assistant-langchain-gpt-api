@@ -26,7 +26,7 @@ class Thread {
       });
       return newThread;
     } catch (error) {
-      throw new Error("Error to create a new thread");
+      throw new Error('Error to create a new thread');
     }
   };
 
@@ -52,6 +52,33 @@ class Thread {
       const thread = await prisma.thread.findFirst({
         where: {
           session_id: sessionID,
+        },
+        select: {
+          session_id: true,
+          created_at: true,
+          thread_history: true,
+          messages: true,
+          is_active: true,
+        },
+      });
+      return thread;
+    } catch (error) {
+      throw new Error(error);
+    }
+  };
+
+  static getThreadById = async (threadId) => {
+    try {
+      const thread = await prisma.thread.findUnique({
+        where: {
+          thread_id: threadId,
+        },
+        select: {
+          session_id: true,
+          created_at: true,
+          thread_history: true,
+          messages: true,
+          is_active: true,
         },
       });
       return thread;
