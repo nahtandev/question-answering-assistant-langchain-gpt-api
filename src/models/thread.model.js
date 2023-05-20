@@ -40,6 +40,14 @@ class Thread {
           is_active: isActive,
           thread_history: threadHistory,
         },
+        select: {
+          thread_id: true,
+          session_id: true,
+          created_at: true,
+          thread_history: true,
+          messages: true,
+          is_active: true,
+        },
       });
       return updateThread;
     } catch (error) {
@@ -54,6 +62,7 @@ class Thread {
           session_id: sessionID,
         },
         select: {
+          thread_id: true,
           session_id: true,
           created_at: true,
           thread_history: true,

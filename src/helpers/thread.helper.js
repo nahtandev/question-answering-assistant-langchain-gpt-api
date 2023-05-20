@@ -18,7 +18,7 @@ const formatThreadData = (data) => {
   // Read message array and format each row
   data.messages.forEach((message) => {
     parsedData.messages.push({
-      rang: message.rang,
+      rank: message.rang,
       text: message.text,
       role: message.role,
     });
@@ -27,7 +27,13 @@ const formatThreadData = (data) => {
   return parsedData;
 };
 
+const getLastMessageRank = (messages = []) => {
+  const lastMessage = messages.pop();
+  return lastMessage.rang;
+};
+
 module.exports = {
   generateSessionID,
   formatThreadData,
+  getLastMessageRank
 };
