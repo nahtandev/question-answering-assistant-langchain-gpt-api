@@ -22,6 +22,7 @@ model messages {
   created_at Int?
   chat_id    Int?
   rang       Int?
+  text       String  @db.VarChar(5000)
   chats      thread? @relation(fields: [chat_id], references: [thread_id], onDelete: NoAction, onUpdate: NoAction, map: "messages_FK")
 
   @@index([chat_id], map: "messages_FK")
