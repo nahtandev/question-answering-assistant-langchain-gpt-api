@@ -88,6 +88,7 @@ const initDocs = async () => {
 
     // If all docs is sync succeful connect apps to vectore store
     const vectoreStore = await getVectorizedDocument();
+    console.info('Connection to vectore store initialized succeful');
     return vectoreStore;
   } catch (error) {
     logger.error(error);
