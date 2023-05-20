@@ -33,6 +33,6 @@ model thread {
   created_at     Int?
   is_active      Boolean
   session_id     String?    @db.VarChar(1000)
-  thread_history String?    @db.VarChar(100)
+  thread_history String?    @db.VarChar(5000)
   messages       messages[]
 }
